@@ -1,0 +1,15 @@
+.odd {
+  background-color: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.event {
+  background-color: #ccdff0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.hide {
+  display: none;
+}
