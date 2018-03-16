@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getDefaultList, getAutorList } from '../actions';
+import { getDefaultList, getAutorList, showDetails } from '../actions';
 import { bindActionCreators } from 'redux';
 
 import TrackLists from '../components/TrackList/track_lists';
@@ -25,11 +25,10 @@ class HomeContainer extends Component {
   }
 
   render() {
-    // console.log(this.props.trackList);
     return (
       <div>
         <SearchAutor getSearch={this.getSearch} value={this.state.inputValue}/>
-        <TrackLists trackList={this.props.trackList}/>
+        <TrackLists trackList={this.props.trackList} showDetails={this.props.showDetails}/>
       </div>
     );
   }
@@ -41,7 +40,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({getDefaultList, getAutorList}, dispatch)
+  return bindActionCreators({ getDefaultList, getAutorList, showDetails }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

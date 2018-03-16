@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Fontawesome from 'react-fontawesome';
 
-import {convertToMinute} from '../../settings/const_func';
+import { convertToMinute } from '../../settings/const_func';
 
 import HeadTrack from './head_track';
 import IconItem from './icon_item';
@@ -10,7 +10,6 @@ import './track_list.css';
 class TrackLists extends Component {
 
   render() {
-
     return (
       <div>
         <HeadTrack />
@@ -23,9 +22,9 @@ class TrackLists extends Component {
                 <div className="col-md-2">{ item.trackName }</div>
                 <div className="col-md-2">{ item.collectionName }</div>
                 <div className="col-md-2">{ item.primaryGenreName }</div>
-                <IconItem id={i} />
+                <IconItem id={i} showDetails={this.props.showDetails} setIcons={item.setIcons}/>
                 <div className="col-md-2"></div>
-                <div id={i} className="col-md-8 hide">
+                <div id={i} className={`col-md-8 ${item.opened ? '' : 'hide'}`}>
                   <h4>{item.artistName}-{item.trackName} <Fontawesome name="music"/></h4>
                   <div className="row">
                   <div className="col-md-6">

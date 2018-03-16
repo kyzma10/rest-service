@@ -1,7 +1,8 @@
 import {
   SEARCH_URL,
   DEFAULT_LIST,
-  AUTOR_LIST
+  AUTOR_LIST,
+  SHOW_DETAILS
   } from '../settings/constans';
 import axios from 'axios';
 
@@ -20,5 +21,12 @@ export function getAutorList (autor) {
   return {
     type: AUTOR_LIST,
     payload: request
+  }
+}
+
+export function showDetails (id) {
+  return {
+    type: SHOW_DETAILS,
+    id
   }
 }

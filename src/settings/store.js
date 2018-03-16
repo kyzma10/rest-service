@@ -5,7 +5,8 @@ import reducers from '../reducers';
 
 const storeWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
-const store = storeWithMiddleware(reducers,
-);
+const store = storeWithMiddleware(
+    reducers,
+  );
 
 export default store;
